@@ -1,0 +1,157 @@
+:root {
+  --color-background: #ffffff;
+  --color-header: #007bff;
+  --color-item: #77ace5;
+  --color-text: rgb(55, 55, 55);
+  --color-done: #4b4646;
+  --color-delete-bg: red;
+  --color-white: white;
+  --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('../images/bg-math.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--color-white);
+}
+
+.todo-list {
+  background: var(--color-background);
+  width: 500px;
+  margin: 100px auto;
+  box-shadow: var(--box-shadow);
+  transition: 0.3s;
+}
+
+.todo-list:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.todo-list__header {
+  background: var(--color-header);
+  margin: 0;
+  padding: 10px 15px;
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-list__toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.todo-list__input {
+  font-size: 20px;
+  background-color: var(--color-background);
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  color: var(--color-header);
+}
+
+.todo-list__input:focus {
+  background: var(--color-white);
+  border: 2px solid var(--color-item);
+  outline: none;
+}
+
+.todo-list__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list__item {
+  border-top: 1px solid var(--color-item);
+  color: var(--color-text);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 0 20px;
+}
+
+.todo-list__item--done {
+  color: var(--color-done);
+  text-decoration: line-through;
+}
+
+.todo-list__delete {
+  background: var(--color-delete-bg);
+  height: 50px;
+  width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  opacity: 0;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.todo-list__item:hover .todo-list__delete {
+  width: 50px;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .todo-list {
+    width: auto;
+    margin: 20px;
+  }
+
+  .todo-list__header {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .todo-list__input {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .todo-list__item {
+    font-size: 18px;
+    padding: 0 15px;
+  }
+
+  .todo-list__delete {
+    height: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .todo-list {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .todo-list__header {
+    font-size: 14px;
+  }
+
+  .todo-list__input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .todo-list__item {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .todo-list__delete {
+    height: 35px;
+  }
+}
